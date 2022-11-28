@@ -120,9 +120,9 @@ Use the command:
 
 git restore .
 
-*Note: This command restores your working copy to the most recent commit
+_Note: This command restores your working copy to the most recent commit
 in your local git database. Changes that you have not committed will be
-lost permanently.*
+lost permanently._
 
 #### 5. Discard all changes made to a file 🚮
 
@@ -209,7 +209,7 @@ Simply undo as follows :
 
 git reset \--hard origin/main
 
-*WARNING: Uncommitted changes will be lost permanently.*
+_WARNING: Uncommitted changes will be lost permanently._
 
 **10. Switch a commit to a different branch 🔼🔽**
 
@@ -239,8 +239,8 @@ Check out the newsletter section :
 
 git checkout newsletter
 
-Find and copy the *commit hash* of the commit that added the
-*footer-layout feature*. Run the command:
+Find and copy the _commit hash_ of the commit that added the
+_footer-layout feature_. Run the command:
 
 git log
 
@@ -258,7 +258,7 @@ Then checkout the newsletter branch:
 git checkout newsletter
 
 And strip it off this unwanted commit, which is the commit that adds the
-*footer-layout*:
+_footer-layout_:
 
 git reset HEAD\~1 \--hard
 
@@ -349,7 +349,7 @@ Begin by investigating the main branch :
 
 git checkout main
 
-Then run git log to get the *commit hash* of the *merge commit*.
+Then run git log to get the _commit hash_ of the _merge commit_.
 
 git log
 
@@ -380,7 +380,7 @@ Find and copy the commit hash that you want your project to revert to :
 
 git log
 
-Reset your repository to that state specified by *commit hash*:
+Reset your repository to that state specified by _commit hash_:
 
 git reset \--hard \<commit-hash\>
 
@@ -442,22 +442,25 @@ height="6.9in"}
 
 Just a few points:
 
--   When working on a team project, it is best to avoid instructions
-    > that overwrite history. You can, however, alter history on your
-    > own dedicated branch that only exists in your own repo. The rule
-    > is to not change the history of a branch on which others have
-    > built their work. Things may become tricky.
+- When working on a team project, it is best to avoid instructions
 
--   You've probably used the git log command, which displays a list of
-    > commits. The git reflog command is similar, but it displays a list
-    > of times when HEAD changed.
+  > that overwrite history. You can, however, alter history on your
+  > own dedicated branch that only exists in your own repo. The rule
+  > is to not change the history of a branch on which others have
+  > built their work. Things may become tricky.
 
--   Your reflog is unique to you. Reflog logs any modifications or
-    > commits made to each branch since cloning a repository.
+- You've probably used the git log command, which displays a list of
 
--   Git does not automatically delete commits after 90 days; they can be
-    > found in the reflog. As a result, you have another chance to
-    > correct your mistakes.
+  > commits. The git reflog command is similar, but it displays a list
+  > of times when HEAD changed.
+
+- Your reflog is unique to you. Reflog logs any modifications or
+
+  > commits made to each branch since cloning a repository.
+
+- Git does not automatically delete commits after 90 days; they can be
+  > found in the reflog. As a result, you have another chance to
+  > correct your mistakes.
 
 Thank you for reading✨
 
