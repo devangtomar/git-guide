@@ -378,7 +378,7 @@ In git:
 
 Find and copy the commit hash that you want your project to revert to :
 
-git log
+```git log```
 
 Reset your repository to that state specified by _commit hash_:
 
