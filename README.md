@@ -382,7 +382,7 @@ Find and copy the commit hash that you want your project to revert to :
 
 Reset your repository to that state specified by _commit hash_:
 
-git reset \--hard \<commit-hash\>
+```git reset \--hard \<commit-hash\>```
 
 #### 15. Modify an old commit message ✂️
 
