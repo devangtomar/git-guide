@@ -1,6 +1,6 @@
 ### A Guide To Undoing Git Mistakes ✅️👨🏻‍🏭
 
-![](./myMediaFolder/media/image1.jpeg){width="5.0in" height="4.55in"}
+![](./myMediaFolder/media/image1.jpeg)
 
 **Mistakes!** These are not required for software development. However,
 they always manage to spoil the beauty of software creation. 🙀
