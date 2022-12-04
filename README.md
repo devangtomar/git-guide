@@ -31,7 +31,6 @@ files you've created and will stick with the modified file changes.
 
 ![](./myMediaFolder/media/image2.jpeg)
 
-
 Git has a command for removing untracked files :
 
 ```git clean -f```
@@ -64,7 +63,6 @@ modules folder in it before committing.
 
 ![](./myMediaFolder/media/image3.png)
 
-
 However, Git is still tracking it (node modules). This is due to the
 fact that once a file has been created and committed to the Git
 database, Git will continue to track changes to it.
@@ -83,7 +81,6 @@ saved the file). Or you add a new file and want it to be linked to the
 most recent commit you made.
 
 ![](./myMediaFolder/media/image4.png)
-
 
 Git will allow you to add your new file after unlocking the prior
 commit.
@@ -112,7 +109,6 @@ can regain your bearings.
 
 ![](./myMediaFolder/media/image5.png)
 
-
 So you want to undo all of your uncommitted changes and return your Git
 working tree to the state it was in when the last commit occurred.
 
@@ -133,7 +129,6 @@ you want to keep any changes made to other files.
 
 ![](./myMediaFolder/media/image6.jpeg)
 
-
 So you want the file connect.js to be restored to its previous state.
 
 Git allows you to do this :
@@ -148,7 +143,6 @@ you chose. You want the message to be more meaningful in describing what
 you did.
 
 ![](./myMediaFolder/media/image7.jpeg)
-
 
 Git is once again forgiving, allowing you to fix your previous crappy
 commit message.
@@ -167,7 +161,6 @@ So, if version 3 was your previous commit, you want this particular file
 to appear as it did in version 2, which was prior to version 3.
 
 ![](./myMediaFolder/media/image8.jpeg)
-
 
 Using Git:
 
@@ -201,7 +194,6 @@ first place?"
 
 ![](./myMediaFolder/media/image9.png)
 
-
 So you want to delete everything on your current local branch and
 replace it with the remote's main branch.
 
@@ -229,7 +221,6 @@ actually belongs to the footer-branch.
 
 ![](./myMediaFolder/media/image10.jpeg)
 
-
 So you want the commit that adds the footer-layout feature to be moved
 from the newsletter branch to the footer-layout branch.
 
@@ -237,30 +228,30 @@ In Git, do the following :
 
 Check out the newsletter section :
 
-git checkout newsletter
+```git checkout newsletter```
 
 Find and copy the _commit hash_ of the commit that added the
 _footer-layout feature_. Run the command:
 
-git log
+```git log```
 
 Checkout the rightful branch you want to apply with this commit. In our
 case:
 
-git checkout footer-layout
+```git checkout footer-layout```
 
 Then apply the commit:
 
-git cherry-pick \<commit-hash\>
+```git cherry-pick \<commit-hash\>```
 
 Then checkout the newsletter branch:
 
-git checkout newsletter
+```git checkout newsletter```
 
 And strip it off this unwanted commit, which is the commit that adds the
 _footer-layout_:
 
-git reset HEAD\~1 \--hard
+```git reset HEAD\~1 \--hard```
 
 HEAD\~1 indicates that we are resetting our newsletter branch to one
 commit behind the most recent commit and removing the commit from which
@@ -276,7 +267,6 @@ time and get it back.
 
 ![](./myMediaFolder/media/image11.png)
 
-
 So you'd like to recover your deleted branch.
 
 Here's how to recover your deleted branch:
@@ -284,11 +274,11 @@ Here's how to recover your deleted branch:
 Locate and copy the commit hash of your deleted branch, which will be
 displayed when you run the command :
 
-git reflog
+```git reflog```
 
 Then recreate your branch as:
 
-git branch \<branch-name\> \<deleted-branch-commit-hash\>
+```git branch \<branch-name\> \<deleted-branch-commit-hash\>```
 
 This will establish a branch with all of the work up to the
 deleted-branch-commit-hash\>. If deleted-branch-commit-hash\> is not the
@@ -315,7 +305,6 @@ issue is not an appropriate solution to an urgent situation.
 
 ![](./myMediaFolder/media/image12.jpeg)
 
-
 Undoing the changes to the error-prone release is one of the quickest
 responses.
 
@@ -326,11 +315,11 @@ This is how you do it in Git:
 Find and copy the commit hash of the commit from which you wish to undo
 changes (the broken commit).
 
-git log
+```git log```
 
 Revert changes specified by that commit:
 
-git revert \<broken-commit-hash\>
+```git revert \<broken-commit-hash\>```
 
 #### 13. Undo a Git Merge 👈🏻❌
 
@@ -347,15 +336,15 @@ So you want to reverse the merge. Git has your back.
 
 Begin by investigating the main branch :
 
-git checkout main
+```git checkout main```
 
 Then run git log to get the _commit hash_ of the _merge commit_.
 
-git log
+```git log```
 
 Then revert like:
 
-git revert -m 1 \<merge-commit-hash\>
+```git revert -m 1 \<merge-commit-hash\>```
 
 Branches in a merge are the parents of that merge.
 
@@ -372,7 +361,6 @@ So you want to go back to an earlier version of your project by
 rewinding the history of your repository.
 
 ![](./myMediaFolder/media/image14.jpeg)
-
 
 In git:
 
@@ -395,18 +383,17 @@ logical semantics (just a message with better explanation).
 
 ![](./myMediaFolder/media/image15.png)
 
-
 With interactive rebase in Git, you can update a commit message further
 back in history:
 
 Find and copy the commit hash of the commit whose commit message you
 want to change :
 
-git log
+```git log```
 
 Open a rebase interactive session:
 
-git rebase -i \<commit-hash\>
+```git rebase -i \<commit-hash\>```
 
 An editor will pop up where you can then fix the typo and provide a
 better descriptive message.
@@ -419,7 +406,6 @@ project history.
 So you want this commit to be removed from your project history.
 
 ![](./myMediaFolder/media/image16.png)
-
 
 You can delete this commit by doing the following :
 
@@ -438,7 +424,6 @@ Then:
 That is how you can correct your errors.
 
 ![](./myMediaFolder/media/image17.jpeg)
-
 
 Just a few points:
 
