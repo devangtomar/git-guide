@@ -29,12 +29,12 @@ You added some new files to your project and updated a few others.
 You've changed your mind and decided that you don't need any of the new
 files you've created and will stick with the modified file changes.
 
-![](./myMediaFolder/media/image2.jpeg){width="4.266666666666667in"
-height="3.2in"}
+![](./myMediaFolder/media/image2.jpeg)
+
 
 Git has a command for removing untracked files :
 
-git clean -f
+```git clean -f```
 
 The git clean command requires the -f parameter, which denotes the force
 directive (also  --- force). Because this operation involves deleting
@@ -50,7 +50,7 @@ This is yet more safeguard against unintentional permanent erasure.
 
 Use the -d switch to remove directories as well.
 
-git clean -df
+```git clean -df```
 
 This will remove untracked files and directories but not those listed in
 the .gitignore file.
@@ -62,8 +62,8 @@ You committed the node modules folder, but you failed to ignore it using
 a .gitignore file. You create the.gitignore file and include the node
 modules folder in it before committing.
 
-![](./myMediaFolder/media/image3.png){width="4.166666666666667in"
-height="4.566666666666666in"}
+![](./myMediaFolder/media/image3.png)
+
 
 However, Git is still tracking it (node modules). This is due to the
 fact that once a file has been created and committed to the Git
@@ -73,7 +73,7 @@ You want Git to cease tracking the node modules subdirectory.
 
 Just run:
 
-git rm -r \--cached node_modules
+```git rm -r \--cached node_modules```
 
 #### 3. Modify the Last Commit 🔨
 
@@ -82,8 +82,8 @@ you neglected to add file modifications in that commit (you may have not
 saved the file). Or you add a new file and want it to be linked to the
 most recent commit you made.
 
-![](./myMediaFolder/media/image4.png){width="5.558333333333334in"
-height="4.458333333333333in"}
+![](./myMediaFolder/media/image4.png)
+
 
 Git will allow you to add your new file after unlocking the prior
 commit.
@@ -92,11 +92,11 @@ Simply follow these steps:
 
 To begin, add the missing file with :
 
-git add newfile.ts
+```git add newfile.ts```
 
 Then, run:
 
-git commit \--amend \--no-edit
+```git commit \--amend \--no-edit```
 
 The \--no-edit flag amends the commit without changing the commit
 message.
@@ -110,15 +110,15 @@ can't figure out what went wrong. You wish to return to the previous
 state (commit) where the application was working properly so that you
 can regain your bearings.
 
-![](./myMediaFolder/media/image5.png){width="4.166666666666667in"
-height="3.225in"}
+![](./myMediaFolder/media/image5.png)
+
 
 So you want to undo all of your uncommitted changes and return your Git
 working tree to the state it was in when the last commit occurred.
 
 Use the command:
 
-git restore .
+```git restore .```
 
 _Note: This command restores your working copy to the most recent commit
 in your local git database. Changes that you have not committed will be
@@ -131,14 +131,14 @@ subsequently discover that the changes you made to a specific file
 (connect.js) were not very intelligent and should be undone. However,
 you want to keep any changes made to other files.
 
-![](./myMediaFolder/media/image6.jpeg){width="5.558333333333334in"
-height="4.791666666666667in"}
+![](./myMediaFolder/media/image6.jpeg)
+
 
 So you want the file connect.js to be restored to its previous state.
 
 Git allows you to do this :
 
-git restore index.js
+```git restore index.js```
 
 #### 6. Modify the Last Commit Message 🏭
 
@@ -147,15 +147,15 @@ you've committed to git, and you're not thrilled with the commit message
 you chose. You want the message to be more meaningful in describing what
 you did.
 
-![](./myMediaFolder/media/image7.jpeg){width="5.0in"
-height="4.941666666666666in"}
+![](./myMediaFolder/media/image7.jpeg)
+
 
 Git is once again forgiving, allowing you to fix your previous crappy
 commit message.
 
 Simply put, run :
 
-git commit \--amend -m \"Phew! A better commit message this time\"
+```git commit \--amend -m \"Phew! A better commit message this time\"```
 
 #### 7. Restore a file to an old version back in time ⌛
 
@@ -166,18 +166,18 @@ commit.
 So, if version 3 was your previous commit, you want this particular file
 to appear as it did in version 2, which was prior to version 3.
 
-![](./myMediaFolder/media/image8.jpeg){width="5.558333333333334in"
-height="3.7in"}
+![](./myMediaFolder/media/image8.jpeg)
+
 
 Using Git:
 
 Find and copy the commit hash whenever you want :
 
-git log
+```git log```
 
 Then:
 
-git restore \--source \<commit-hash\> \<filename\>
+```git restore \--source \<commit-hash\> \<filename\>```
 
 That simple, right?
 
@@ -189,7 +189,7 @@ realise you require the file you just deleted.
 
 To get your file back :
 
-git restore deleted-file.css
+```git restore deleted-file.css```
 
 This will present the file to you as it was in the previous commit.
 
@@ -199,15 +199,15 @@ You made a few changes and commits to your local repo branch. You've
 rewired, and you're wondering, "Why did I even make these changes in the
 first place?"
 
-![](./myMediaFolder/media/image9.png){width="4.166666666666667in"
-height="2.8666666666666667in"}
+![](./myMediaFolder/media/image9.png)
+
 
 So you want to delete everything on your current local branch and
 replace it with the remote's main branch.
 
 Simply undo as follows :
 
-git reset \--hard origin/main
+```git reset \--hard origin/main```
 
 _WARNING: Uncommitted changes will be lost permanently._
 
@@ -227,8 +227,8 @@ newsletter branch.
 Later, you discover that the commit you made to the newsletter branch
 actually belongs to the footer-branch.
 
-![](./myMediaFolder/media/image10.jpeg){width="4.166666666666667in"
-height="4.166666666666667in"}
+![](./myMediaFolder/media/image10.jpeg)
+
 
 So you want the commit that adds the footer-layout feature to be moved
 from the newsletter branch to the footer-layout branch.
@@ -274,8 +274,8 @@ can over it (delete it). The next time you are alarmed, delete it by
 accident. You are now in "panic mode." You wish you could go back in
 time and get it back.
 
-![](./myMediaFolder/media/image11.png){width="4.166666666666667in"
-height="3.7333333333333334in"}
+![](./myMediaFolder/media/image11.png)
+
 
 So you'd like to recover your deleted branch.
 
@@ -313,8 +313,8 @@ version contains a significant fault that must be addressed immediately.
 The technical team must respond quickly, and sitting down to uncover the
 issue is not an appropriate solution to an urgent situation.
 
-![](./myMediaFolder/media/image12.jpeg){width="5.558333333333334in"
-height="6.333333333333333in"}
+![](./myMediaFolder/media/image12.jpeg)
+
 
 Undoing the changes to the error-prone release is one of the quickest
 responses.
@@ -339,7 +339,7 @@ believe you are ready to merge the feature branch into your main branch.
 So you merge feature branch from your main branch and push your new
 modifications to the remote repository.
 
-![](./myMediaFolder/media/image13.jpeg){width="5.1in" height="3.4in"}
+![](./myMediaFolder/media/image13.jpeg)
 
 Moments later, you understand that merge was not at all a nice move.
 
@@ -371,8 +371,8 @@ working on a software project with others.
 So you want to go back to an earlier version of your project by
 rewinding the history of your repository.
 
-![](./myMediaFolder/media/image14.jpeg){width="3.3333333333333335in"
-height="3.5in"}
+![](./myMediaFolder/media/image14.jpeg)
+
 
 In git:
 
@@ -393,8 +393,8 @@ ambiguous.
 So you want to replace this message with a better message that depicts
 logical semantics (just a message with better explanation).
 
-![](./myMediaFolder/media/image15.png){width="4.166666666666667in"
-height="4.291666666666667in"}
+![](./myMediaFolder/media/image15.png)
+
 
 With interactive rebase in Git, you can update a commit message further
 back in history:
@@ -418,18 +418,18 @@ project history.
 
 So you want this commit to be removed from your project history.
 
-![](./myMediaFolder/media/image16.png){width="5.425in"
-height="4.341666666666667in"}
+![](./myMediaFolder/media/image16.png)
+
 
 You can delete this commit by doing the following :
 
 First, locate and copy the doomed commit's commit hash.
 
-git log
+```git log```
 
 Then:
 
-git rebase -i \<commit-hash\>
+```git rebase -i \<commit-hash\>```
 
 ### GitHub URL for this article 💻
 
@@ -437,8 +437,8 @@ git rebase -i \<commit-hash\>
 
 That is how you can correct your errors.
 
-![](./myMediaFolder/media/image17.jpeg){width="5.558333333333334in"
-height="6.9in"}
+![](./myMediaFolder/media/image17.jpeg)
+
 
 Just a few points:
 
